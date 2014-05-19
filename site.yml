@@ -5,3 +5,4 @@
   roles:
     - upgrade-server
     - mariadb
+    - mariadb-grant
