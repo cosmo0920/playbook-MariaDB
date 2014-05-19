@@ -1,0 +1,11 @@
+- name: install software-properties-common
+  apt: name=software-properties-common update_cache=yes
+
+- name: add apt key for Mariadb
+  apt_key: url=http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xcbcb082a1bb943db
+
+- name: add repo for MariaDB
+  apt_repository: repo='deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/ubuntu trusty main'
+
+- name: install MariaDB
+  apt: name=mariadb-server state=latest update_cache=yes
