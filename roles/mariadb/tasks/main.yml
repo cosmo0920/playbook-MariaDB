@@ -7,5 +7,8 @@
 - name: add repo for MariaDB
   apt_repository: repo='deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/ubuntu trusty main'
 
-- name: install MariaDB
+- name: install MariaDB client
+  apt: name=mariadb-client state=latest update_cache=yes
+
+- name: install MariaDB server
   apt: name=mariadb-server state=latest update_cache=yes
